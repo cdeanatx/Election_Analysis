@@ -64,8 +64,8 @@ print(
 #Open a text file where I will write the results of my analysis
 with open(f_write_name, "w") as analysis_txt:
 
-    title_str = "Election results"
-    analysis_txt.write(title_str + "\n" + "-" * len(title_str) + "\n")
+    title_str = "Election Results"
+    analysis_txt.write(f"\n{title_str}\n-------------------------\nTotal Votes: {votes_count:,}\n-------------------------\n")
     
     for candidate in candidate_votes:
         votes = candidate_votes[candidate]
