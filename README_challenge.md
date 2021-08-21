@@ -13,7 +13,7 @@ A Colorado Board of Elections employee gave me the following tasks to complete t
 - Data Source: election_results.csv
 - Software: Python 3.9.6, Visual Studio Code 1.59.1
 
-## Summary
+## Project Summary
 The analysis of the election show that:
 - There were 369,711 votes cast in the election.
 - The candidates were:
@@ -28,5 +28,11 @@ The analysis of the election show that:
   - Diana DeGette, who received 272,892 votes (73.8%)
 
 ## Challenge Overview
+The Colorado Board of Elections has requested additional data to complete their audit.
+
+Calculate the following:
+1. Voter turnout for each county
+2. Percentage of votes from each county out of the total count
+3. County with the highest turnout
 
 ## Challenge Summary
