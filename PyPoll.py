@@ -64,6 +64,18 @@ print(
 #Open a text file where I will write the results of my analysis
 with open(f_write_name, "w") as analysis_txt:
 
-    title_str = "Counties in the Election"
-    section = "-" * (len(title_str) + 1)
-    analysis_txt.write(title_str + "\n" + section + "\nArapahoe\nDenver\nJefferson")
+    title_str = "Election results"
+    analysis_txt.write(title_str + "\n" + "-" * len(title_str) + "\n")
+    
+    for candidate in candidate_votes:
+        votes = candidate_votes[candidate]
+        vote_percentage = float(votes) / float(votes_count) * 100
+        analysis_txt.write(f"{candidate}: {vote_percentage:.1f}% ({votes:,})\n")
+    
+    analysis_txt.write(
+        f"-------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_votes:,}\n"
+        f"Winning Percentage: {winning_percent:.1f}%\n"
+        f"-------------------------\n"
+    )
