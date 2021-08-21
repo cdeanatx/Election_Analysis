@@ -5,5 +5,10 @@
 #5) Find the winner of the election based on popular vote
 
 import csv
+fname = "Resources/election_results.csv"
 
-dir(csv)
+#open the election results and read the file
+with open(fname, encoding='UTF-8') as election_data:
+
+    #Analysis to be performed
+    print(election_data)
