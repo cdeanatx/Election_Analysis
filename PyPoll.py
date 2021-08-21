@@ -13,6 +13,7 @@ f_write_name = "Analysis/election_analysis.txt"
 #Initialize vars
 votes_count = 0
 candidates = []
+candidate_votes = {}
 
 #open the election results and read the file
 with open(f_read_name, encoding='UTF-8') as election_data:
@@ -26,12 +27,20 @@ with open(f_read_name, encoding='UTF-8') as election_data:
     #count votes
     for row in f_reader:
         votes_count += 1 #total vote accumulator
+        candidate_current = row[2] #candidate for current iteration
 
-        #add unique candidates to list
-        if row[2] not in candidates:
-            candidates.append(row[2])
+        #add unique candidates to list and initialize dictionary entries
+        if candidate_current not in candidates:
+            candidates.append(candidate_current)
+            candidate_votes[candidate_current] = 0
 
-print(f"{votes_count:,} total votes\nCandidates: " + str(candidates)[1:-1])
+        #tally vote counter for current candidate
+        candidate_votes[candidate_current] += 1
+
+    #Calculate percentage of votes for each candidate
+
+
+print(f"{votes_count:,} total votes\nCandidates: " + str(candidates)[1:-1] + "\nCandidate votes: " + str(candidate_votes)[1:-1])
 
 #Open a text file where I will write the results of my analysis
 with open(f_write_name, "w") as analysis_txt:
